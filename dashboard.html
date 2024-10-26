@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deployment Dashboard</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<h1>Deployment Dashboard</h1>
+<p id="versionDisplay" style="color: grey; font-size: 0.9em;"></p>
+<button onclick="logout()">Logout</button>
+
+<div id="map" style="width: 100%; height: 500px;"></div>
+
+<div id="controls">
+    <h3>Add Deployment Station</h3>
+    <input type="text" id="stationName" placeholder="Station Name" required />
+    <input type="text" id="stationLat" placeholder="Latitude" required />
+    <input type="text" id="stationLon" placeholder="Longitude" required />
+    <button onclick="addDeploymentStation()">Add Station</button>
+
+    <h3>Manage Commodities</h3>
+    <input type="text" id="newCommodityType" placeholder="Commodity Type" />
+    <button onclick="addCommodityType()">Add Commodity Type</button>
+
+    <h3>Add Commodity to Station</h3>
+    <label for="stationSelect">Select Station:</label>
+    <select id="stationSelect"></select>
+    
+    <label for="commoditySelect">Select Commodity:</label>
+    <select id="commoditySelect"></select>
+    
+    <input type="number" id="commodityQuantity" placeholder="Quantity" min="1" />
+    <button onclick="addCommodity()">Add Commodity</button>
+    
+    <h3>Station List</h3>
+    <ul id="stationList"></ul>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
